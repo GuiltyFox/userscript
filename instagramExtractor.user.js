@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         instagram extractor
 // @namespace    https://gtfox.tk/
-// @version      1
+// @version      1.01
 // @description  extract image url
 // @author       gtfox
 // @match        https://www.instagram.com/p/*/*
