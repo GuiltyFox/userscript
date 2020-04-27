@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         instagram extractor
 // @namespace    https://gtfox.tk/
-// @version      1.01
+// @version      1.02
 // @description  extract image url
 // @author       gtfox
 // @match        https://www.instagram.com/p/*/*
 // @grant        GM_setClipboard
+// @run-at       document-body
 // ==/UserScript==
 
 (function() {
@@ -15,7 +16,6 @@
     var observer = new MutationObserver(function (mutations, me) {
         let image = root.querySelector("section > main > div > div > article > div > div > div > div > img");
         if(image && image.srcset){
-            console.log('Yes');
             let url = image.srcset.split(',')[2].split(' ')[0];
             let target = root.querySelector("section > main > div > div > article > div > section > button");
             let button1 = document.createElement("button");
@@ -34,10 +34,9 @@
             target.parentNode.insertBefore(button1, target.nextSibling);
             observer.disconnect();
         }else{
-            console.log('No');
         }
     });
-    observer.observe(root, {
+    observer.observe(document, {
         childList: true,
         subtree: true
     });
