@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         instagram extractor
-// @namespace    https://gtfox.tk/
+// @namespace    GuiltyFox
 // @version      1.02
 // @description  extract image url
-// @author       gtfox
+// @author       GuiltyFox
 // @match        https://www.instagram.com/p/*/*
 // @grant        GM_setClipboard
 // @run-at       document-body
