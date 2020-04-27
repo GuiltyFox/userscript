@@ -5,7 +5,6 @@
 // @description  extract image url
 // @author       gtfox
 // @match        https://www.instagram.com/p/*/*
-// @grant        GM_openInTab
 // @grant        GM_setClipboard
 // ==/UserScript==
 
@@ -24,14 +23,12 @@
             button1.innerHTML = `<img src="https://img.icons8.com/metro/24/000000/copy-link.png"/>`;
             button1.onclick = function(){
                 GM_setClipboard(url, 'text');
-                console.log('click');
             }
             let button2 = document.createElement("button");
             button2.className = target.className;
             button2.innerHTML = `<img src="https://img.icons8.com/metro/24/000000/external-link.png"/>`;
             button2.onclick = function(){
-                GM_openInTab(url, false);
-                console.log('click');
+                window.open(url,'_blank');
             }
             target.parentNode.insertBefore(button2, target.nextSibling);
             target.parentNode.insertBefore(button1, target.nextSibling);
