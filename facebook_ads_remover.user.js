@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remove facebook ads
 // @namespace    https://*.facebook.com/
-// @version      0.1
+// @version      0.2
 // @description  Remove facebook ads
 // @author       You
 // @match        https://*.facebook.com/*
@@ -27,8 +27,9 @@
                     let span = node.querySelectorAll('span:not([style])')
                     let txt = Array.prototype.map.call(span, function(t) { return t.textContent[0]; }).join('')
                     if(txt.contains('Sponsored')){
-                       console.log(node);
-                       node.remove();
+                        console.log(node);
+                        node.style.height = '0px';
+                        node.style.overflow = 'hidden';
                     }
                 }
             }
